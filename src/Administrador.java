@@ -1,25 +1,23 @@
+import java.util.Scanner;
+
 public class Administrador extends Usuario {
+
+    Scanner sc = new Scanner(System.in);
+
     public Administrador(String nome, String senha, String email){
         super(nome,senha,email);
-    }
-
-    public String adicionarConteudo(){
-        return "Conteudo adicionado";
-    }
-
-    public String removerConteudo(){
-        return "Conteudo removido";
     }
 
     public String visualizarUsuarios(){
         return "VISUALIZANDO...";
     }
 
-    public String bloquearUsuario(){
-        return "Usuario bloqueado";
+    public Usuario bloquearUsuario(Usuario user){
+        // Adicionar lógica para realizar switch - isBloqueado = true
+        return user;
     }
 
-    public String excluirUsuario(){
-        return "Usuario excluido com sucesso";
+    public void excluirUsuario(Usuario user){
+        System.out.println("");
     }
 }

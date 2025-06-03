@@ -1,25 +1,28 @@
 import java.util.ArrayList;
 
 public class Cliente extends Usuario{
-    ArrayList<String> favoritos;                //Alterar objeto para Conteudo
-    ArrayList<String> historicoReproducao;      //Alterar objeto para Conteudo
+    private ArrayList<Conteudo> favoritos;                //Alterar objeto para Conteudo
+    private ArrayList<Conteudo> historicoReproducao;      //Alterar objeto para Conteudo
+    private boolean isBloqueado;
+
     public Cliente(String nome, String senha, String email){
         super(nome, senha, email);
         this.favoritos = new ArrayList<>();
         this.historicoReproducao = new ArrayList<>();
+        boolean isBloqueado;
     }
 
-    public String adicionarFavorito(String filme) {  //Alterar objeto para Conteudo
+    public String adicionarFavorito(Conteudo filme) {  //Alterar objeto para Conteudo
         favoritos.add(filme);
         return filme + "adicionado aos Favoritos!";
     }
 
-    public String removerFavorito(String filme){           //Alterar objeto para Conteudo
+    public String removerFavorito(Conteudo filme){           //Alterar objeto para Conteudo
         if (favoritos.contains(filme)) {
             favoritos.remove(filme);
-            return filme + "removido dos Favoritos!";
+            return filme + " foi deletado com successo";
         } else {
-            return filme + "não está nos Favoritos!";
+            return filme + " não foi encontrado";
         }
     }
 
