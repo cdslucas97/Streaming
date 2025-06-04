@@ -3,39 +3,68 @@ import java.util.ArrayList;
 public class Cliente extends Usuario{
     private ArrayList<Conteudo> favoritos;                //Alterar objeto para Conteudo
     private ArrayList<Conteudo> historicoReproducao;      //Alterar objeto para Conteudo
-    private boolean isBloqueado;
 
     public Cliente(String nome, String senha, String email){
         super(nome, senha, email);
         this.favoritos = new ArrayList<>();
         this.historicoReproducao = new ArrayList<>();
-        boolean isBloqueado;
     }
 
-    public String adicionarFavorito(Conteudo filme) {  //Alterar objeto para Conteudo
-        favoritos.add(filme);
-        return filme + "adicionado aos Favoritos!";
+    public String adicionarFavorito(Conteudo conteudo) {  //Alterar objeto para Conteudo
+        if (conteudo == null){
+            return "Conteudo invalido.";
+        }
+
+        if (favoritos.contains(conteudo)) {
+            return conteudo.getTitulo() + " ja esta nos favoritos";
+        }
+
+        favoritos.add(conteudo);
+        return conteudo.getTitulo() + " adicionado aos Favoritos";
     }
 
-    public String removerFavorito(Conteudo filme){           //Alterar objeto para Conteudo
-        if (favoritos.contains(filme)) {
-            favoritos.remove(filme);
-            return filme + " foi deletado com successo";
+    public String removerFavorito(Conteudo conteudo){           //Alterar objeto para Conteudo
+        if (conteudo == null) {
+            return "Conteudo invalido";
+        }
+        if (favoritos.contains(conteudo)) {
+            favoritos.remove(conteudo);
+            return conteudo.getTitulo() + " foi deletado com successo";
         } else {
-            return filme + " não foi encontrado";
+            return conteudo.getTitulo() + " não foi encontrado";
         }
     }
 
     public String listarFavorito(){
+        if (favoritos.isEmpty()){
+            return "Você não possui conteudos favoritos";
+        }
         return "Favoritos: " + favoritos;
     }
 
-    public String registarReproducao(){
-        return "REGISTRANDO...";
+    public String registarReproducao(Conteudo conteudo){
+        if (conteudo == null) {
+            return "Conteudo invalido";
+        }
+
+        historicoReproducao.add(conteudo);
+        return conteudo.getTitulo() + " foi adicionado ao seu histórico";
     }
 
-    public void limparHistorico(){
+    public String listarHistorico(){
+        if (historicoReproducao.isEmpty()) {
+            return "Assista um filme de nosso incrivel catalogo";
+        }
+
+        return "Historico: " + historicoReproducao;
+    }
+
+    public String limparHistorico(){
+        if (historicoReproducao.isEmpty()) {
+            return "Seu historico de reproducao ja esta vazio";
+        }
         favoritos.clear();
+        return "Historico de reproducao limpo";
     }
 
 
