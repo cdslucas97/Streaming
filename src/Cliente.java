@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class Cliente extends Usuario{
-    private ArrayList<Conteudo> favoritos;                //Alterar objeto para Conteudo
-    private ArrayList<Conteudo> historicoReproducao;      //Alterar objeto para Conteudo
+    private ArrayList<Conteudo> favoritos;
+    private ArrayList<Conteudo> historicoReproducao;
 
     public Cliente(String nome, String senha, String email){
         super(nome, senha, email);
@@ -10,7 +10,7 @@ public class Cliente extends Usuario{
         this.historicoReproducao = new ArrayList<>();
     }
 
-    public String adicionarFavorito(Conteudo conteudo) {  //Alterar objeto para Conteudo
+    public String adicionarFavorito(Conteudo conteudo) {
         if (conteudo == null){
             return "Conteudo invalido.";
         }
@@ -66,10 +66,8 @@ public class Cliente extends Usuario{
         favoritos.clear();
         return "Historico de reproducao limpo";
     }
-
-
     //    public String obterRecomendacao(){
-//        return "Implementando...";
-//    }
+    //        return "Implementando...";
+    //    }
 
 }
