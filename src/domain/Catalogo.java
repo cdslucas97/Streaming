@@ -6,7 +6,7 @@ public class Catalogo {
     private ArrayList<Conteudo> conteudos;
 
     public Catalogo(){
-        this.conteudos = conteudos;
+        this.conteudos = new ArrayList<>();
     }
 
     public void adicionarConteudo(Conteudo conteudo){
