@@ -50,14 +50,26 @@ public class Administrador extends Usuario {
 
     public String excluirUsuario(Usuario user){
         if (user == null) {
-            return "domain.Usuario invalido";
+            return "Usuario invalido";
         }
 
         if (usuarios.contains(user)) {
             usuarios.remove(user);
-            return "domain.Usuario " + user.getNome() + " foi excluido com sucesso";
+            return "Usuario " + user.getNome() + " foi excluido com sucesso";
         } else {
-            return "domain.Usuario nao encontrado";
+            return "Usuario nao encontrado";
         }
     }
+
+    public void adicionarConteudoAoCatalogo(Conteudo conteudo, Catalogo catalogo) {
+        catalogo.adicionarConteudo(conteudo);
+        System.out.println("Conteúdo " + conteudo.getTitulo() + " adicionado ao catálogo");
+    }
+
+    public void removerConteudoDoCatalogo(Conteudo conteudo, Catalogo catalogo) {
+        catalogo.removerConteudo(conteudo);
+        System.out.println("Conteúdo " + conteudo.getTitulo() + " removido do catálogo");
+    }
+
+
 }
