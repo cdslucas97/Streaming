@@ -1,4 +1,5 @@
 package domain;
+import exception.LoginInvalidoException;
 
 public abstract class Usuario {
     private String nome;
@@ -13,15 +14,14 @@ public abstract class Usuario {
         this.isBloqueado = false;
     }
 
-    public String login(String senhaInformada){
-        if(this.senha.equals(senhaInformada)){
-            if(this.isBloqueado){
-                return "domain.Usuario bloqueado, entre em contato com o suporte";
-            }
-            return "Logado com sucesso";
-        } else{
-            return "domain.Usuario ou senha invalido.";
+    public String login(String senhaInformada) throws LoginInvalidoException {
+        if (!this.senha.equals(senhaInformada)) {
+            throw new LoginInvalidoException("Usuario ou senha invalido.");
         }
+        if (this.isBloqueado) {
+            throw new LoginInvalidoException("Usuario bloqueado, entre em contato com o suporte");
+        }
+        return "Logado com sucesso";
     }
 
     public String getNome() {
