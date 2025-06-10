@@ -14,7 +14,7 @@ public class Cliente extends Usuario {
 
     public String adicionarFavorito(Conteudo conteudo) {
         if (conteudo == null){
-            return "domain.Conteudo invalido.";
+            return "Conteudo invalido.";
         }
 
         if (favoritos.contains(conteudo)) {
@@ -25,9 +25,9 @@ public class Cliente extends Usuario {
         return conteudo.getTitulo() + " adicionado aos Favoritos";
     }
 
-    public String removerFavorito(Conteudo conteudo){           //Alterar objeto para domain.Conteudo
+    public String removerFavorito(Conteudo conteudo){
         if (conteudo == null) {
-            return "domain.Conteudo invalido";
+            return "Conteudo invalido";
         }
         if (favoritos.contains(conteudo)) {
             favoritos.remove(conteudo);
@@ -46,7 +46,7 @@ public class Cliente extends Usuario {
 
     public String registarReproducao(Conteudo conteudo){
         if (conteudo == null) {
-            return "domain.Conteudo invalido";
+            return "Conteudo invalido";
         }
 
         historicoReproducao.add(conteudo);
@@ -65,7 +65,7 @@ public class Cliente extends Usuario {
         if (historicoReproducao.isEmpty()) {
             return "Seu historico de reproducao ja esta vazio";
         }
-        favoritos.clear();
+        historicoReproducao.clear();
         return "Historico de reproducao limpo";
     }
     //    public String obterRecomendacao(){
