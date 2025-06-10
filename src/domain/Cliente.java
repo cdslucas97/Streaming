@@ -1,6 +1,8 @@
+package domain;
+
 import java.util.ArrayList;
 
-public class Cliente extends Usuario{
+public class Cliente extends Usuario {
     private ArrayList<Conteudo> favoritos;
     private ArrayList<Conteudo> historicoReproducao;
 
@@ -12,7 +14,7 @@ public class Cliente extends Usuario{
 
     public String adicionarFavorito(Conteudo conteudo) {
         if (conteudo == null){
-            return "Conteudo invalido.";
+            return "domain.Conteudo invalido.";
         }
 
         if (favoritos.contains(conteudo)) {
@@ -23,9 +25,9 @@ public class Cliente extends Usuario{
         return conteudo.getTitulo() + " adicionado aos Favoritos";
     }
 
-    public String removerFavorito(Conteudo conteudo){           //Alterar objeto para Conteudo
+    public String removerFavorito(Conteudo conteudo){           //Alterar objeto para domain.Conteudo
         if (conteudo == null) {
-            return "Conteudo invalido";
+            return "domain.Conteudo invalido";
         }
         if (favoritos.contains(conteudo)) {
             favoritos.remove(conteudo);
@@ -44,7 +46,7 @@ public class Cliente extends Usuario{
 
     public String registarReproducao(Conteudo conteudo){
         if (conteudo == null) {
-            return "Conteudo invalido";
+            return "domain.Conteudo invalido";
         }
 
         historicoReproducao.add(conteudo);

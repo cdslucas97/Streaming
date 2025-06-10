@@ -1,7 +1,9 @@
+package app;
+
 public class Main{
     public static void main(String[] args) {
 
-//        Cliente c1 = new Cliente("Carlos","123","teste@email.com");
+//        domain.Cliente c1 = new domain.Cliente("Carlos","123","teste@email.com");
 //        System.out.println(c1.toString());
 //        c1.adicionarFavorito("Ex_Machina");
 //        System.out.println(c1.listarFavorito());

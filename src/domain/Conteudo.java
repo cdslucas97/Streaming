@@ -1,3 +1,5 @@
+package domain;
+
 public abstract class Conteudo {
     private String titulo;
     private String ano;

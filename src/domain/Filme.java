@@ -1,3 +1,5 @@
+package domain;
+
 public class Filme extends Conteudo {
     private int duracaoMinutos;
 
@@ -16,7 +18,7 @@ public class Filme extends Conteudo {
 
     @Override
     public String getTipo() {
-        return "Filme";
+        return "domain.Filme";
     }
 
     @Override

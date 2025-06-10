@@ -1,3 +1,5 @@
+package domain;
+
 public class Serie extends Conteudo {
     private int numeroTemporadas;
 

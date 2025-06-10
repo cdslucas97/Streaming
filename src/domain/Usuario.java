@@ -1,3 +1,5 @@
+package domain;
+
 public abstract class Usuario {
     private String nome;
     private String senha;
@@ -14,11 +16,11 @@ public abstract class Usuario {
     public String login(String senhaInformada){
         if(this.senha.equals(senhaInformada)){
             if(this.isBloqueado){
-                return "Usuario bloqueado, entre em contato com o suporte";
+                return "domain.Usuario bloqueado, entre em contato com o suporte";
             }
             return "Logado com sucesso";
         } else{
-            return "Usuario ou senha invalido.";
+            return "domain.Usuario ou senha invalido.";
         }
     }
 
