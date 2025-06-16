@@ -1,0 +1,2 @@
+Filme;Ex_Machina;2014;Ficção Científica;108
+Serie;O dia do chacal;2024;Thriller;1
