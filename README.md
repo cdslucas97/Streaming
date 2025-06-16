@@ -1,8 +1,7 @@
 ![Logo](https://i.imgur.com/czR4Giw.png)
 
 
-Uma aplicação em java para simular um sistema de Streaming de filmes e séries.
-
+Um software de streaming completo!
 ## Funcionalidades
 
 - Painel do Cliente
@@ -10,10 +9,12 @@ Uma aplicação em java para simular um sistema de Streaming de filmes e séries
     - Visualização do histórico de reprodução
     - Limpeza do histórico de reprodução
     - Assistir midia pelo navegador padrão do dispositivo
+    - Usuario teste: cliente@email.com - 123
 - Painel do Administrador
     - Cadastro de novos conteúdos (filmes ou séries)
     - Cadastro de novos usuarios
     - Bloqueio de usuarios
+    - Usuario teste: admin@email.com - 123
 ## Screenshots
 
 ![Tela de login](https://i.imgur.com/3CwVBfD.png) 
