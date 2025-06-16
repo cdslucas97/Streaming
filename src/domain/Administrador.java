@@ -1,75 +1,40 @@
 package domain;
 
-import java.util.ArrayList;
+import data.ConteudoData;
+import data.UsuarioData;
+import java.util.List;
 
 public class Administrador extends Usuario {
-    private ArrayList<Usuario> usuarios = new ArrayList<>();
 
-    public Administrador(String nome, String senha, String email){
-        super(nome,senha,email);
+    public Administrador(String nome, String senha, String email) {
+        super(nome, senha, email);
     }
 
-    public void adicionarUsuario(Usuario user){
-        if (user != null){
-            usuarios.add(user);
-        }
+    public List<Usuario> listarTodosOsUsuarios() throws Exception {
+        return UsuarioData.listarTodos();
     }
 
-    public String listarUsuarios(){
-        if (usuarios.isEmpty()) {
-            return "Não há usuarios cadastrados no sistema";
-        }
-        return "Usuarios: " + usuarios;
+    public String bloquearUsuario(Usuario usuarioParaBloquear) throws Exception {
+        UsuarioData.bloquear(usuarioParaBloquear.getNome());
+        return "Usuário " + usuarioParaBloquear.getNome() + " foi bloqueado.";
     }
 
-    public String bloquearUsuario(Usuario user){
-        if (user == null) {
-            return "domain.Usuario invalido.";
-        }
-
-        if (usuarios.contains(user)) {
-            user.setBloqueado(true);
-            return "domain.Usuario " + user.getNome() + " foi bloqueado";
-        } else {
-         return "domain.Usuario nao encontrado";
-        }
+    public String desbloquearUsuario(Usuario usuarioParaDesbloquear) throws Exception {
+        UsuarioData.desbloquear(usuarioParaDesbloquear.getNome());
+        return "Usuário " + usuarioParaDesbloquear.getNome() + " foi desbloqueado.";
     }
 
-    public String desbloquearUsuario(Usuario user) {
-        if (user == null) {
-            return "domain.Usuario invalido";
-        }
-
-        if (usuarios.contains(user)) {
-            user.setBloqueado(false);
-            return "domain.Usuario " + user.getNome() + " foi desbloqueado";
-        } else {
-            return "domain.Usuario nao foi encontrado";
-        }
+    public String excluirUsuario(Usuario usuarioParaExcluir) throws Exception {
+        UsuarioData.remover(usuarioParaExcluir.getNome());
+        return "Usuário " + usuarioParaExcluir.getNome() + " foi excluído com sucesso.";
     }
 
-    public String excluirUsuario(Usuario user){
-        if (user == null) {
-            return "Usuario invalido";
-        }
-
-        if (usuarios.contains(user)) {
-            usuarios.remove(user);
-            return "Usuario " + user.getNome() + " foi excluido com sucesso";
-        } else {
-            return "Usuario nao encontrado";
-        }
+    public List<Conteudo> listarTodoOConteudo() throws Exception {
+        return ConteudoData.listarTodos();
     }
 
-    public void adicionarConteudoAoCatalogo(Conteudo conteudo, Catalogo catalogo) {
-        catalogo.adicionarConteudo(conteudo);
-        System.out.println("Conteúdo " + conteudo.getTitulo() + " adicionado ao catálogo");
+    public String adicionarConteudo(Conteudo conteudo) throws Exception {
+        ConteudoData.adicionar(conteudo);
+        return "Conteúdo '" + conteudo.getTitulo() + "' adicionado ao catálogo.";
     }
-
-    public void removerConteudoDoCatalogo(Conteudo conteudo, Catalogo catalogo) {
-        catalogo.removerConteudo(conteudo);
-        System.out.println("Conteúdo " + conteudo.getTitulo() + " removido do catálogo");
-    }
-
-
 }
