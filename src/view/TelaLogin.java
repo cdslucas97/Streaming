@@ -1,8 +1,9 @@
 package view;
 
 import data.UsuarioData;
+import domain.Administrador;
+import domain.Cliente;
 import domain.Usuario;
-import exception.LoginInvalidoException;
 import javax.swing.*;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -88,8 +89,19 @@ public class TelaLogin extends JFrame {
                     } else if (!usuarioEncontrado.getSenha().equals(senha)) {
                         JOptionPane.showMessageDialog(this, "Usuario ou senha invalido.", "Erro de Login", JOptionPane.ERROR_MESSAGE);
                     } else {
-                        // Se chegou aqui, o login foi bem-sucedido
-                        JOptionPane.showMessageDialog(this, "Login realizado com sucesso!", "Bem-vindo!", JOptionPane.INFORMATION_MESSAGE);
+                        // Se chegou aqui, o login foi bem-sucedido.
+                        dispose(); // Fecha a tela de login
+
+                        // Verifica se o usuario é um Cliente ou Administrador
+                        if (usuarioEncontrado instanceof Cliente) {
+                            TelaCliente telaCliente = new TelaCliente((Cliente) usuarioEncontrado);
+                            telaCliente.setVisible(true);
+
+                        } else if (usuarioEncontrado instanceof Administrador) { //
+                            // Se for admin, abre a nova tela de administrador
+                            TelaAdmin telaAdmin = new TelaAdmin((Administrador) usuarioEncontrado);
+                            telaAdmin.setVisible(true);
+                        }
                     }
                 } else {
                     // Usuário não foi encontrado na lista
@@ -104,6 +116,7 @@ public class TelaLogin extends JFrame {
 
         // Abre o painel de registro
         botaoRegistro.addActionListener(e -> {
+            // MODIFICADO: Corrigido o nome da classe para TelaCadastroUsuario, que criamos anteriormente
             TelaCadastro telaCadastro = new TelaCadastro();
             telaCadastro.setVisible(true);
         });
