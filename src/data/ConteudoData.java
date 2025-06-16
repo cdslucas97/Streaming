@@ -20,11 +20,11 @@ public class ConteudoData {
         String linha = reader.readLine();
         while (linha != null) {
             String[] p = linha.split(SEP);
-            String tipo   = p[0];
+            String tipo = p[0];
             String titulo = p[1];
-            String ano    = p[2];
+            String ano = p[2];
             String genero = p[3];
-            String valor  = p[4];
+            String valor = p[4];
 
             if (tipo.equals("Filme")) {
                 lista.add(new Filme(titulo, ano, genero, Integer.parseInt(valor)));
@@ -61,29 +61,27 @@ public class ConteudoData {
     // Sobrescreve o arquivo com todos os conteúdos da lista
     private static void salvarLista(List<Conteudo> lista) throws Exception {
         BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH));
-        int i = 0;
-        while (i < lista.size()) {
-            Conteudo c = lista.get(i);
+        for (Conteudo c : lista) {
             String linha;
-            if (c.getTipo().equals("Filme")) {
+            if (c instanceof Filme) {
                 Filme f = (Filme) c;
                 linha = "Filme" + SEP
                         + f.getTitulo() + SEP
-                        + f.getAno()    + SEP
+                        + f.getAno() + SEP
                         + f.getGenero() + SEP
                         + f.getDuracaoMinutos();
             } else {
                 Serie s = (Serie) c;
                 linha = "Serie" + SEP
                         + s.getTitulo() + SEP
-                        + s.getAno()    + SEP
+                        + s.getAno() + SEP
                         + s.getGenero() + SEP
                         + s.getNumeroTemporadas();
+
+                writer.write(linha);
+                writer.newLine();
             }
-            writer.write(linha);
-            writer.newLine();
-            i = i + 1;
+            writer.close();
         }
-        writer.close();
     }
 }
