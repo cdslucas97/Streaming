@@ -18,7 +18,7 @@ public class Serie extends Conteudo {
 
     @Override
     public String getTipo() {
-        return "Série";
+        return "Serie";
     }
 
     @Override

@@ -18,7 +18,7 @@ public class Filme extends Conteudo {
 
     @Override
     public String getTipo() {
-        return "domain.Filme";
+        return "Filme";
     }
 
     @Override
