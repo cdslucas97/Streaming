@@ -3,6 +3,7 @@ import domain.*;
 import exception.LoginInvalidoException;
 import view.*;
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class Main extends JFrame {
     public static void main(String[] args) {
