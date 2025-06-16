@@ -58,6 +58,12 @@ public abstract class Usuario {
 
     @Override
     public String toString() {
-        return "Nome: " + getNome() + "\nSenha: " + getSenha() + "\nEmail: " + getEmail() + "Bloqueado: " + isBloqueado();
+        return String.format(
+                "%s (%s) - Email: %s - Bloqueado: %s",
+                this.nome,
+                this.senha,
+                this.email,
+                this.isBloqueado()
+        );
     }
 }
