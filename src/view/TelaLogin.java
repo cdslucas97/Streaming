@@ -12,11 +12,15 @@ import java.util.List;
 public class TelaLogin extends JFrame {
 
     public TelaLogin() {
-        // CONFIGURAÇÃO DA JANELA
+        // Titulo
         setTitle("MovieFlix");
+        // Operação ao fechar a janela
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // Tamanho da janela
         setSize(300, 200);
+        // Bloqueia redimensionamento
         setResizable(false);
+        // Inicia o programa no meio da tela (
         setLocationRelativeTo(null);
 
 
