@@ -9,12 +9,12 @@ Um software de streaming completo!
     - Visualização do histórico de reprodução
     - Limpeza do histórico de reprodução
     - Assistir midia pelo navegador padrão do dispositivo
-    - Usuario teste: cliente@email.com - 123
+    - Usuario teste: cliente@email.com - cliente123
 - Painel do Administrador
     - Cadastro de novos conteúdos (filmes ou séries)
     - Cadastro de novos usuarios
     - Bloqueio de usuarios
-    - Usuario teste: admin@email.com - 123
+    - Usuario teste: admin@email.com - amin123
 ## Screenshots
 
 ![Tela de login](https://i.imgur.com/3CwVBfD.png) 

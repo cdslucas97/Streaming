@@ -2,9 +2,11 @@ package domain;
 
 import data.ConteudoData;
 import data.UsuarioData;
+
+import java.io.Serializable;
 import java.util.List;
 
-public class Administrador extends Usuario {
+public class Administrador extends Usuario implements Serializable {
 
     public Administrador(String nome, String senha, String email) {
         super(nome, senha, email);

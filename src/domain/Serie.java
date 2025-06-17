@@ -1,6 +1,8 @@
 package domain;
 
-public class Serie extends Conteudo {
+import java.io.Serializable;
+
+public class Serie  extends Conteudo implements Serializable {
     private int numeroTemporadas;
 
     public Serie(String titulo, String ano, String genero, int numeroTemporadas) {

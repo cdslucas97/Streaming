@@ -1,2 +1,0 @@
-Cliente;cliente;123;cliente@email.com;false
-Administrador;admin;123;admin@email.com;false

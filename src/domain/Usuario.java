@@ -1,7 +1,9 @@
 package domain;
 import exception.LoginInvalidoException;
 
-public abstract class Usuario {
+import java.io.Serializable;
+
+public abstract class Usuario implements Serializable {
     private String nome;
     private String senha;
     private String email;

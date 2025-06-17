@@ -1,6 +1,8 @@
 package domain;
 
-public class Filme extends Conteudo {
+import java.io.Serializable;
+
+public class Filme extends Conteudo implements Serializable {
     private int duracaoMinutos;
 
     public Filme(String titulo, String ano, String genero, int duracaoMinutos) {

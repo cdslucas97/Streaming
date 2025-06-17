@@ -1,6 +1,8 @@
 package domain;
 
-public abstract class Conteudo {
+import java.io.Serializable;
+
+public abstract class Conteudo implements Serializable {
     private String titulo;
     private String ano;
     private String genero;
